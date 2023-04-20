@@ -1,0 +1,46 @@
+.site-account {
+    display: flex;
+    align-items: center;
+
+    a {
+      @include h7();
+      color: $primary-color;
+      display: flex;
+      align-items: center;
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      svg {
+        margin-right: 8px;
+
+        circle,
+          path {
+            transition: all 0.3s ease;
+          }
+      }
+    }
+  }
+
+  .heart_link {
+    @include h7();
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    svg {
+      margin-right: 8px;
+
+      circle,
+        path {
+          transition: all 0.3s ease;
+        }
+    }
+  }

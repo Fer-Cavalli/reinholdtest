@@ -1,0 +1,145 @@
+.grid--designers {
+    margin-top: 120px;
+
+    @include responsive('tablet-v') {
+        margin-top: 60px;
+    }
+
+    .grid {
+        &__cont {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 30px;
+            margin-top: 30px;
+
+            @include responsive('mobile-h') {
+                grid-gap: 15px;
+            }
+
+            @include responsive('mobile-v') {
+                grid-template-columns: repeat(1,1fr);
+                grid-gap: 30px;
+            }
+        }
+
+        &__item {
+            text-align: center;
+
+            &__image {
+                position: relative;
+                aspect-ratio: 1;
+                margin-bottom: 30px;
+            }
+
+            &__title {
+                color: $primary-color;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            } 
+
+            &:hover {
+                .image_hover{
+                    opacity: 1;
+                    transition: all 0.8s ease-out;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+    
+                    &::before {
+                        @include absolute();
+                        background: $secondary-color;
+                        opacity: 0.3;
+                        content: '';
+                        z-index: 2;
+                    }
+                }
+            }
+
+            .image_hover {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.grid--gallery {
+    margin-top: 60px;
+
+    .grid {
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 40px;
+
+            @include responsive('mobile-h') {
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+
+        &__item {
+            position: relative;
+            aspect-ratio: 1;
+        }
+    }
+}
+
+.grid--news {
+    margin-top: 100px;
+
+    @include responsive('tablet-v') {
+        margin-top: 60px;
+    }
+
+    .grid {
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 50px;
+            text-align: center;
+
+            @include responsive('mobile-h') {
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+
+        &__item {
+            transition: all 0.5s ease;
+
+            &:hover {
+                transform: translate(0,-10px);
+
+                p {
+                    text-decoration: underline;
+                    text-underline-offset: 4px;
+                }
+            }
+
+        }
+
+        &__image {
+            position: relative;
+            aspect-ratio: 1.69;
+            margin-bottom: 30px;
+        } 
+
+        &__title,
+        &__date {
+            color: $primary-color;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        &__date {
+            margin-top: 10px;
+        }
+    }
+
+    p {
+        margin-top: 10px;
+        color: $primary-color;
+        letter-spacing: 1px;
+    }
+}

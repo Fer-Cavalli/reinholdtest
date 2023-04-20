@@ -1,0 +1,25 @@
+.site-logo {
+    display: block;
+    width: 200px;
+    display: flex;
+    align-items: center;
+
+    @include responsive('mobile-v') {
+        width: 150px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.scrolled {  
+    .site-logo {
+    width: 150px;
+    }
+
+    .header__top {
+        padding-top: 20px;
+    }
+}

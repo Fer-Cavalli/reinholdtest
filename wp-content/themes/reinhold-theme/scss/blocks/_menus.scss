@@ -1,0 +1,48 @@
+.menus--links {
+    margin-top: 120px;
+
+    @include responsive('tablet-v') {
+        margin-top: 60px;
+    }
+
+    .menus {
+        &__content {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            @include responsive('mobile-h') {
+                gap: 10px;
+            }
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+            &::after {
+                content: '/';
+                padding: 0 5px;
+            }
+
+            &:nth-last-child(1) {
+                &:after {
+                    display: none;
+                }
+            }
+
+            a {
+                text-transform: uppercase;
+                color: $primary-color;
+                letter-spacing: 2px;
+                text-decoration: underline;
+                text-underline-offset: 4px;
+
+                &:hover {
+                    text-decoration: none;
+                    opacity: 0.7;
+                }
+             }
+        }
+    }
+}

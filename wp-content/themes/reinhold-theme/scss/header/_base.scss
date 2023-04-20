@@ -1,0 +1,93 @@
+.header {
+  @include row();
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: $white;
+
+  .container {
+    width: 100%;
+  }
+
+  &__top,
+  &__bottom {
+    display: flex;
+    width: 100%;
+    padding: 40px 0 20px 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @include responsive('tablet-h') {
+      padding: 20px 0;
+    }
+
+    &__left {
+      display: flex;
+      align-items: center;
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: absolute;
+      right: 0;
+      bottom: -20px;
+      z-index: 2;
+
+      @include responsive('tablet-h') {
+        position: static;
+      }
+    }
+  }
+
+  &__top {
+    @include responsive('tablet-h') {
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+      background: $white; 
+    }
+  }
+
+  &__bottom {
+    padding: 0;
+
+    @include responsive('tablet-h') {
+      @include absolute();
+      height: 100vh;
+      transform: translate(0,-100%);
+      transition: all 0.5s ease;
+      background: $white;
+      align-items: flex-start;
+    }
+  } 
+}
+
+.scrolled {
+  .header {
+    background: $white;
+    filter: drop-shadow(15px 15px 20px rgba(0, 0, 0, 0.1));
+  }
+}
+
+.error_template {
+	padding: 200px 0;
+  .page-content {
+    width: 50%;
+    margin-top: 20px;
+    @include responsive('mobile-v') {
+      width: 100%;
+    }
+  }
+}
+
+.site-content {
+  padding-top: 135px;
+
+  @include responsive('tablet-h') {
+    padding-top: 72px;
+  }
+}

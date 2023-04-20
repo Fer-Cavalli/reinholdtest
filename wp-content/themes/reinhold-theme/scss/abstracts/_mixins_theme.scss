@@ -1,0 +1,141 @@
+@mixin margin() {
+  margin-top: 130px;
+
+  @include responsive('tablet-h') {
+    margin-top: 70px;
+  }
+}
+
+@mixin site__uppertitle {
+  @include h5();
+  text-transform: uppercase;
+  color: $primary-color;
+  text-align: center;
+}
+
+@mixin site__title() {
+  @include h3();
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.site__title {@include site__title();}
+
+@mixin site__text() {
+  @include h5();
+  color: $primary-color;
+  text-align: center;
+  margin: 0 auto;
+  width: 700px;
+  max-width: 100%;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.site__text {@include site__text();}
+
+
+/* Text Block Custom Style */
+
+@mixin text_block() {
+	h1,h2,h3,h4,h5,h6 {
+		color: $primary-color;
+    margin-bottom: 20px 
+	}
+
+	h1 {
+		@include h1();
+	}
+	h2 {
+		@include h2();
+	}
+	h3 {
+		@include h3();
+	}
+	h4 {
+		@include h4();
+	}
+	h5 {
+		@include h5();
+	}
+	h6 {
+		@include h6();
+	}
+	p {
+    @include h5();
+		line-height: 2;
+
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+	}
+	ul, ol {
+		padding-left: 15px;
+		margin: 20px 0;
+		line-height: 1.6;
+
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+	}
+	ul {
+		li {
+			list-style: disc;
+		}
+	}
+	a {
+		color: $primary-color;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+  blockquote {
+    padding-left: 30px;
+    border-left: 3px solid $primary-color;
+    margin-bottom: 40px;
+
+    p {
+      @include h3();
+    }
+  }
+
+  img {
+    width: auto;
+    height: auto;
+    margin: 0 0 28px 0;
+  }
+
+  .alignleft {
+    float: left;
+    margin-right: 30px;
+  }
+
+  .aligncenter {
+    margin: 30px auto;
+    display: block;
+  }
+
+  .alignright {
+    float: right;
+    margin-left: 30px;
+  }
+}
+
+@mixin inputs() {
+  height: 40px;
+  line-height: 40px;
+  background: none;
+  border: 1px solid $fog-grey;
+  padding: 0 25px;
+  @include h6();
+  color: $primary-color;
+
+  &::placeholder {
+    color: #BBBFC1;
+  }
+}

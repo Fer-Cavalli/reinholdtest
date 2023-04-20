@@ -1,0 +1,24 @@
+.site-cart {
+    display: flex;
+    align-items: center;
+    min-height: 25px;
+    @include h7();
+    color: $primary-color;
+    opacity: 0.4;
+
+    @include responsive('tablet-h') {
+      width: 28px;
+      height: 25px;
+      position: relative;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    svg {
+      g {
+        fill: $primary-color;
+      }
+    }
+}

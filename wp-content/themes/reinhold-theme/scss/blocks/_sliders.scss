@@ -1,0 +1,98 @@
+.slider--category {
+    margin-top: 120px;
+
+    @include responsive('tablet-v') {
+        margin-top: 60px;
+    }
+
+    .slider {
+
+        &__title {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        &__cont {
+            width: 100%;
+            padding: 0 60px;
+            margin-top: 30px;
+            
+            @include responsive('tablet-v') {
+                padding: 0 10px;
+            }
+
+            &--flex {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include responsive('mobile-h') {
+                   flex-direction: column;
+                }
+            }
+        }
+
+        &__item {
+            width: 25%;
+
+            @include responsive('tablet-v') {
+                width: 33.33%;
+            }
+
+            @include responsive('mobile-h') {
+                width: 50%;
+            }
+
+            @include responsive('mobile-v') {
+                width: 100%;
+            }
+
+            &__cont {
+                width: 100%;
+                padding: 0 15px;
+                text-align: center;
+                @include image_hover();
+            }
+
+            &__image {
+                position: relative;
+                aspect-ratio: 0.81;
+                margin-bottom: 30px;
+            }
+
+            &__title {
+                color: $primary-color;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            } 
+        }
+
+        
+    }
+
+    .flickity-button {
+        background: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .flickity-prev-next-button.previous {
+        @include responsive('tablet-v') {
+            left: -30px;
+        }
+    }
+    
+
+
+
+    .flickity-prev-next-button {        
+        @include responsive('tablet-v') {
+            right: -30px;
+        }
+    }
+}

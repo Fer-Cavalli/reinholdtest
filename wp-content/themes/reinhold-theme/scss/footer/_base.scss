@@ -1,0 +1,125 @@
+.site-footer {
+  @include row();
+  margin-top: 100px;
+  background: #c5c5c5;
+
+  .site-logo {
+    width: 200px !important;
+  }
+
+   &__cont {
+    padding: 60px 0 20px 0;
+  }
+
+  &__container {
+    display: flex;
+    grid-gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+
+    @include responsive('tablet-v') {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__column {
+    position: relative;
+    width: 100%;
+
+    &:nth-last-child(1) {
+      display: flex;
+      align-items: flex-start;
+      grid-gap: 30px;
+
+      @include responsive('tablet-v') {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .footer_menu {
+      width: 100%;
+      padding: 40px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px 40px;
+      
+      @include responsive('mobile-h') {
+        grid-template-columns: 1fr;
+      }
+
+      &__item {
+       
+        &--text {
+          @include h6();
+          color: $primary-color;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  .left__column {
+    width: 300px;   
+    
+    p {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .gform_wrapper.gravity-theme .gfield_label {
+      display: none;
+    }
+
+    input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+		textarea {
+      border: none;
+      border-bottom: 1px solid $primary-color;
+      padding: 0 5px;
+      background-color: transparent;
+
+      &::placeholder {
+        color: $primary-color;
+      }
+
+      &:focus-visible {
+        outline: none;
+        border: 1px solid $black;
+      }
+    }
+
+    .gform_footer input.button, 
+    .gform_footer input[type=submit], 
+    .gform_page_footer input.button, 
+    .gform_page_footer input[type=submit] {
+      font-size: 12px;
+      height: 30px;
+      line-height: 30px;
+      background: none !important;
+      width: 150px;
+
+      &:hover {
+        background: $primary-color !important;
+      }
+    }
+  }
+
+  .right__column {
+    width: 200px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
+  .copyright {
+    @include h7();
+    color: $primary-color;
+  }
+}

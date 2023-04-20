@@ -1,0 +1,13 @@
+.paragraph {
+    @include text_block();
+    margin-top: 60px;
+
+    .container {
+        width: 1060px;
+    }
+
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

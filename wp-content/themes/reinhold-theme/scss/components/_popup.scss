@@ -1,0 +1,77 @@
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 800px;
+    height: 550px;
+    max-width: 100%;
+    background: transparent;
+    padding: 30px;
+    box-shadow: 0px 0px 15px $black;
+    background: $white;
+
+    @include responsive('tablet-h'){
+        height: 650px;
+        overflow: scroll;
+        max-width: 80%;
+        padding: 30px;
+    }
+
+    @include responsive('mobile-v'){
+        height: 535px;
+        max-width: 90%;
+    }
+
+    @media only screen and (max-width: 375px){
+        height: 463px;
+    }
+
+    .close_popup{
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 2;
+        cursor: pointer;
+        background: url(images/close.svg) no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        width: 18px;
+        height: 18px; 
+    }
+
+    input[type='radio'] {
+        margin-bottom: 38px;
+        width: 16px;
+        height: 16px;
+        &:checked::after {
+            background: linear-gradient(180deg, #F99919 0%, #DE1245 100%);
+            width: 16px;
+            height: 16px;
+            border-radius: 16px;
+            position: relative;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid $white;
+        }
+    }
+    label {
+        color: $white;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        padding-left: 12px;
+    }
+
+    .gform_wrapper.gravity-theme .gform_footer {
+        padding: 16px 0 0 0;
+        position: relative;
+    }
+
+    .gform_ajax_spinner {
+        margin-left: 20px;
+    }
+}

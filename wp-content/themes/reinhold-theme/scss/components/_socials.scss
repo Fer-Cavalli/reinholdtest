@@ -1,0 +1,24 @@
+.socials {
+    display: flex;
+    gap: 15px;
+
+    @include responsive('mobile-v') {
+        display: none;
+    }
+
+    a {
+        display: block;
+        height: 18px;
+        width: 18px;
+        position: relative;
+
+        svg {
+            @include absolute();
+            object-fit: contain;
+        }
+
+        &:hover {
+        opacity: 0.5;
+        }
+    }
+}

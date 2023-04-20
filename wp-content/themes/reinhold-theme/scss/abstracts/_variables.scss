@@ -1,0 +1,82 @@
+
+/// @type List
+$default-font: 'Avenir Next', sans-serif !default;
+$secondary-font: 'Avenir Next', sans-serif !default;
+
+/// @type Color
+$primary-color: #000 !default;
+$secondary-color: #000000 !default;
+$third-color: #333F44 !default;
+$grey: #D2D4D5 !default;
+$evening-grey: #606A6E !default;
+$fog-grey: #8E9497 !default;
+$white: #ffffff !default;
+$black: #000 !default;
+$dark-grey: #333F44 !default;
+$light-grey: #F7F7F7 !default;
+
+/// @type Length
+$site-widths: (
+  'full-width': 100%,
+  'max-width': 1440px,
+) !default;
+
+$font-sizes: (
+  'h1': 35px,
+  'h2': 25px,
+  'h3': 20px,
+  'h4': 16px,
+  'h5': 14px,
+  'h6': 14px,
+  'h7': 12px,
+  /*'h1': 20px,
+  'h2': 16px,
+  'h3': 12px,
+  'h4': 10px,
+  'h5': 9px,
+  'h6': 16px,
+  'h7': 12px,*/
+) !default;
+
+$font-sizes-tablet: (
+  'h1': 30px,
+  'h2': 20px,
+  'h3': 18px,
+  'h4': 16px,
+  'h5': 14px,
+  'h6': 14px,
+  'h7': 12px,
+) !default;
+
+$font-sizes-mobile: (
+  'h1': 25px,
+  'h2': 18px,
+  'h3': 16px,
+  'h4': 14px,
+  'h5': 14px,
+  'h6': 14px,
+  'h7': 12px,
+  ) !default;
+
+$font-weights: (
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'demi': 600,
+  'bold': 700,
+) !default;
+
+
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+
+$breakpoints: (
+'mobile-s': 400px,
+'mobile-v': 600px,
+'mobile-h': 750px,
+'tablet-v': 900px,
+'tablet-h': 1050px,
+'desktop-xs': 1200px,
+'desktop': 1440px,
+) !default;

@@ -1,0 +1,222 @@
+.hero--home {
+    position: relative;
+    aspect-ratio: 2.22;
+
+    @include responsive('tablet-v') {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @include responsive('mobile-v') {
+        aspect-ratio: 1;
+    }
+
+    .container {
+        width: 1200px;
+    }
+
+    .hero {
+
+        &__image {
+            @include absolute();
+            z-index: -1;
+        }
+
+        &__content {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 80px;
+
+            @include responsive('tablet-v') {
+                margin-top: 0;
+            }
+        }
+
+        &__cont {
+            text-align: center;
+        }
+
+        &__title {
+            font-weight: 700;
+            color: $white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        &__link {
+            color: $white;
+            text-decoration: underline;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.hero--video {
+    aspect-ratio: 2.33;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @include responsive('mobile-v') {
+        aspect-ratio: 1;
+    }
+
+    .hero {
+        &__video {
+            @include absolute();
+            z-index: -1;
+
+            video {
+                @include absolute();
+                object-fit: cover;
+            }
+        }
+        
+        &__title,
+        &__text {
+            color: $white;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            font-weight: 700;
+        }
+
+        &__text {
+            margin-top: 20px;
+            letter-spacing: 4px;
+        }
+    }
+
+    
+}
+
+.hero--simple {
+    .hero__image {
+        position: relative;
+        min-height: 500px;
+    }
+}
+
+.hero--inner {
+    .hero__image + .container {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+
+        .hero__title {
+            color: $white;
+        }
+    }
+}
+
+.hero_simple {
+    padding: 100px 0 60px 0;
+    text-align: center;
+
+    @include responsive('tablet-v') {
+        padding: 60px 0 30px 0;
+    }
+
+    &__title {
+        @include site__title();
+    }
+}
+
+.hero--contact {
+    background: #ab004f;
+    padding: 100px 0;
+
+    @include responsive('tablet-v') {
+        padding: 60px 0;
+    }
+
+    .hero {
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 100px;
+            
+            @include responsive('tablet-v') {
+                grid-template-columns: repeat(1,1fr);
+                grid-gap: 40px;
+            }
+        }
+
+        &__column {
+
+            &:nth-child(1) {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                @include responsive('tablet-v') {
+                    justify-content: center;
+                    text-align: center;
+                }
+            }            
+        }
+
+        &__title {
+            color: $white;
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+            @include responsive('tablet-v') {
+                justify-content: center;
+            }
+
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
+
+            &__image {
+                position: relative;
+                aspect-ratio: 1;
+                width: 30px;
+                margin-right: 30px;
+            }
+
+            &__text {
+                font-weight: 700;
+                text-transform: uppercase;
+                color: $white;
+                letter-spacing: 2px;
+                text-decoration: underline;
+                text-underline-offset: 4px;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: none;
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
+
+.hero--post {
+    margin-top: 60px;
+
+    .container {
+        width: 1060px;
+    }
+
+    .hero {
+        &__image {
+            position: relative;
+            aspect-ratio: 1.77;
+        }
+    }
+}

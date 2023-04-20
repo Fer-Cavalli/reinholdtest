@@ -1,0 +1,44 @@
+.two_column_text {
+    margin: 140px 0 0 0;
+
+    @include responsive('tablet-v') {
+        margin-top: 44px;
+    }
+    
+    &__cont {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 67px;
+
+        @include responsive('tablet-v'){
+            grid-template-columns: 1fr;
+            grid-gap: 35px;
+        }
+
+        &__content {
+            .two_column_text_title{
+                font-size: 36px;
+                margin-bottom: 10px;
+                font-weight: 400;
+
+                @include responsive('mobile-h') {
+                    font-size: 30px;
+                }
+            }
+            .two_column_text_description {
+                font-size: 16px;
+                @include text_block();
+
+                @include responsive('mobile-h') {
+                    font-size: 16px;
+                    line-height: 28px;
+                }
+            }
+
+            .button {
+                margin-top: 20px;
+            }
+
+        }
+    }
+}

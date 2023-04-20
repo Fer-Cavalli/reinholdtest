@@ -1,0 +1,223 @@
+.site,
+.woocommerce,
+.woocommerce .site {
+	.form_block {			
+		margin: 50px 0;
+
+		@include responsive('mobile-v') {
+			margin: 28px 0;
+		}
+		.gform_wrapper.gravity-theme .gform_footer input {
+			margin-right: 20px;
+		}
+
+		&--products {
+			.container {
+				display: grid;
+				grid-template-columns: 1fr 40%;	
+				grid-gap: 45px;
+
+				@include responsive('tablet-h') {
+					grid-template-columns: 1fr;
+					grid-gap: 50px;
+				}
+				@include responsive('mobile-v'){
+					grid-gap: 5px;
+				}
+				.products {
+					li {
+						width: 100% !important;
+					}
+				}
+			}
+		}
+
+		.columns-4 {
+			.product {
+				&__item {
+					&__cont {
+						.product__buttons{
+							display: flex;
+							flex-direction: column;
+							width: 100%;
+							height: 100%;
+							align-items: center;
+						}
+					}
+				}
+			}
+		}
+	}
+	.gform_wrapper {
+		margin: 0 !important;
+		padding: 0 !important;
+	
+		input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+		textarea {
+			@include inputs();
+		}
+		&.gravity-theme {
+			.gfield_required {
+				display: none;
+			}
+		}
+
+		.gfmc-column {
+			padding-right: 48px;
+
+			&:nth-last-child(1) {
+				padding-right: 0;
+			}
+
+			h4 {
+				margin-bottom: 4px;
+				@include h5();
+			}
+
+			.form__text {
+				@include h7();
+				margin-top: 15px;
+
+				a {
+					color: $primary-color;
+					text-decoration: underline;
+
+					&:hover {
+						color: $secondary-color;
+					}
+				}
+			}
+
+			input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+			textarea {
+				width: 100%;
+			}
+		}
+
+		.ginput_complex.ginput_container_address {
+			span,
+			span.ginput_right+span.ginput_left {
+				width: 100%;
+				padding-right: 0 !important;
+				margin-right: 0 !important;
+				margin-bottom: 10px;
+				display: block;
+			}
+
+			label {
+				display: none !important;
+			}
+		}
+
+		.gform_footer input.button, 
+		.gform_footer input[type=submit], 
+		.gform_page_footer input.button, 
+		.gform_page_footer input[type=submit] {
+			@include h7();
+			margin-bottom: 0;
+		}
+
+		li.gfield.gfield_error,
+		li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+			border: none;
+			background: none;
+			margin: 0;
+			padding: 0;
+			@include h7();
+		}
+
+		.gform_validation_errors {
+			background: transparent !important;
+			box-shadow:  none !important;
+			border: none !important;
+			padding: 16px 0 16px 48px !important
+		}
+		.validation_message {
+			padding-top: 0 !important;
+			padding: 0;
+			border: none !important;	
+		}
+
+		div.validation_error {
+			padding: 8px 0;
+			@include h7();
+			line-height: 1.2;
+			margin-bottom: 10px;
+		}
+
+		.gfield_checkbox li input,
+		.gfield_checkbox li input[type=checkbox], 
+		.gfield_radio li input[type=radio] {
+			display: none;
+		}
+
+		ul.gfield_checkbox li label,
+		ul.gfield_radio li label {
+			@include h7();
+			color: $fog-grey;
+			padding-left: 30px;
+			line-height: 20px;
+			position: relative;
+
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 20px;
+				height: 20px;
+				border: 1px solid $primary-color;
+				content: '';
+			}
+		}
+
+		.gchoice_select_all, 
+		ul.gfield_checkbox li input[type=checkbox]:checked+label, 
+		ul.gfield_radio li input[type=radio]:checked+label {
+			&:after {
+				position: absolute;
+				top: 2px;
+				left: 2px;
+				width: 16px;
+				height: 16px;
+				background: $secondary-color;
+				content: '';
+			}
+		}
+	}
+}
+
+.formBox {
+	input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+	textarea {
+		@include inputs();
+		width: 100%;
+		margin-bottom: 8px;
+		background: $white !important;
+	}
+
+	p {
+		@include h7();
+		color: $fog-grey;
+		line-height: 1.2;
+
+		a {
+			color: $primary-color;
+			text-decoration: underline;
+
+			&:hover {
+				color: $secondary-color;
+			}
+		}
+	}
+}
+
+// hide antispam honeypot
+.gform_validation_container, 
+.gform_wrapper .gform_validation_container, 
+body .gform_wrapper li.gform_validation_container, 
+body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container, 
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+	display: none !important;
+	position: absolute !important;
+	left: -9000px;
+}
